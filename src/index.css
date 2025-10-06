@@ -89,7 +89,6 @@ body {
   max-height: 28px;
   display: block;
   max-width: 100%;
-  vertical-align: middle;
 }
 
 .client-logos-wrapper {
@@ -101,4 +100,33 @@ body {
 .client-logos-wrapper .client-logos {
   display: flex;
   justify-content: space-between;
+}
+
+/* Media query - Desktop Medium (1366px) */
+@media (max-width: 1024px) {
+  .skill__card {
+    min-height: 140px;
+    min-width: 130px;
+  }
+}
+
+/* Media query - Table (1024px) */
+@media (max-width: 1024px) {
+
+}
+
+/* Media query - Table (820px) - Windows*/
+@media (max-width: 820px) {
+  .skill-cards {
+    padding-left: 0px;
+    justify-content: center;
+  }
+  .skill__card:nth-of-type(3) {
+    margin-left: 0px;
+  }
+}
+
+/* Media query - Mobile (767px) */
+@media (max-width: 767px) {
+  
 }
