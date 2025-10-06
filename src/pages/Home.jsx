@@ -7,8 +7,8 @@ function HomePage () {
         <>
             <section className="heroSection">
                 <Container className="custom" sx={{ marginTop: "auto", marginBottom: "3rem", paddingTop: "1rem" }}>
-                    <Grid container rowSpacing={{ xs: 3, sm: 4, md: 6, lg: 6 }} columnSpacing={{ xs: 3, sm: 3, md: 3 }}>
-                        <Grid size={{ xs: 12, md: 6 }}>
+                    <Grid container rowSpacing={{ xs: 4, sm: 4, md: 6, lg: 6 }} columnSpacing={{ xs: 3, sm: 3, md: 3 }}>
+                        <Grid size={{ xs: 12, md: 6, lg: 7 }}>
                             <Typography variant="h2" gutterBottom sx={{
                                 fontSize: {
                                 xs: '1.8rem',  // mobile
@@ -32,7 +32,7 @@ function HomePage () {
                                 <Button variant="contained" color="primary" size="large">Start LevelUp Course</Button>
                             </Box>
                         </Grid>
-                        <Grid size={{ xs: 12, md: 6 }}>
+                        <Grid size={{ xs: 12, md: 6, lg: 5 }}>
                             <Box className="skill-cards">
                                 <Skillcard />
                             </Box>
