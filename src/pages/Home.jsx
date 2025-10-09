@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import Skillcard from "../components/Skillcard";
 import TrustedPartners from "../components/TrustedPartners";

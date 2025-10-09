@@ -74,6 +74,9 @@ body {
   background-origin: border-box;
   background-clip: content-box, border-box;
   border: 2px solid transparent; /* needed to show the background-clip border */
+
+  pointer-events: all;
+  text-decoration: none;
 }
 
 .skill__card:hover {
@@ -101,6 +104,33 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+
+/*single course page*/
+.course__breadcrumbs {
+  list-style-type: none;
+  padding: 0px;
+  margin-top: 0px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.course__breadcrumbs > li {
+  position: relative;
+}
+.course__breadcrumbs > li + li {
+  padding-left: 20px;
+}
+.course__breadcrumbs > li + li::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 24px;
+  background-color: #bebebe;
+  left: 0px;
+  top: 0px;
+}
+/*single course page*/
 
 /* Media query - Desktop Medium (1366px) */
 @media (max-width: 1024px) {

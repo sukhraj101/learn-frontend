@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const skills = [
     {
         id: 1,
@@ -30,10 +32,10 @@ function Skillcard() {
     <>
       {skills.map((skill) => {
         return (
-          <div className="skill__card" key={skill.id}>
-            <img src={skill.logo} style={{ width: 50 }} alt={skill.name} />
-            <h3 className="skill__title" style={{ marginBottom: 0 }}>{skill.name}</h3>
-          </div>
+            <Link to={'/' + skill.slug} className="skill__card" key={skill.id}>
+                <img src={skill.logo} style={{ width: 50 }} alt={skill.name} />
+                <h3 className="skill__title" style={{ marginBottom: 0 }}>{skill.name}</h3>
+            </Link>
         );
       })}
     </>
