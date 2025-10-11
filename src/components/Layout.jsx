@@ -1,11 +1,12 @@
 // components/Layout.jsx
-// import { AppBar, Toolbar, Box } from '@mui/material'
+import React from 'react'
+import { AppBar, Toolbar, Box } from '@mui/material'
 import { Outlet, NavLink } from 'react-router-dom'
 
 function Layout() {
   return (
     <>
-      {/* <AppBar position="fixed" color="white.main" sx={{ top: 0, boxShadow: 0 }} className="headerTop">
+      <AppBar position="fixed" color="white.main" sx={{ top: 0, boxShadow: 0 }} className="headerTop">
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <NavLink to="/">
             <img src="logo.svg" alt="Logo" style={{ height: 40 }} />
@@ -37,12 +38,12 @@ function Layout() {
             </ul>
           </Box>
         </Toolbar>
-      </AppBar> */}
+      </AppBar>
         
-        <main>
+      <main>
         {/* This is where nested routes will render */}
         <Outlet />
-        </main>
+      </main>
     </>
   )
 }
