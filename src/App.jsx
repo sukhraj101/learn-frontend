@@ -4,7 +4,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import HomePage from "./pages/home/home";
-import Skill from "./pages/skill/skill";
+import Skill from "./pages/skill/skill"
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {

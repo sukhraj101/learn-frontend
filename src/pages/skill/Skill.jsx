@@ -3,8 +3,8 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useTheme } from '@mui/material/styles';
 import { Link } from "react-router-dom";
-import "./skill.scss";
 import CustomizedAccordions from "../../components/accordion/accordion";
+import "./skill.scss";
 
 const modules = [
     {
