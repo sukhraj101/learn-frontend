@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { alpha } from '@mui/material/styles';
+import PropTypes from 'prop-types';
 import './accordion.scss';
 
 // 🔧 Styled Accordion
@@ -142,3 +143,24 @@ export default function CustomizedAccordions({ modules = [] }) {
     </Box>
   );
 }
+
+CustomizedAccordions.defaultProps = {
+  modules: [],
+};
+
+CustomizedAccordions.propTypes = {
+  modules: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      name: PropTypes.string.isRequired,
+      desc: PropTypes.string,
+      ques: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+          title: PropTypes.string.isRequired,
+          content: PropTypes.string.isRequired,
+        })
+      ).isRequired,
+    })
+  ),
+};
