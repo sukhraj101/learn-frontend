@@ -1,0 +1,8 @@
+// hero section
+.heroSection {
+  display: flex;
+  align-items: center;
+  @media (min-width: 1200px) {
+    min-height: calc(100vh - 64px);
+  }
+}

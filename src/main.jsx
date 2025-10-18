@@ -1,26 +1,44 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { ThemeProvider, createTheme } from '@mui/material'
-import App from './App.jsx'
-import './index.css'
-import { BrowserRouter } from 'react-router-dom'
-import { purple } from '@mui/material/colors'
+import React from 'react';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import App from './App.jsx';
+import './index.scss';
+
+// Define color constants
+const primaryColor = '#0033FF';
+const secondaryColor = '#dcfce8';
+const accentColor = '#f44336';
+const whiteColor = '#ffffff';
+const blackColor = '#000000';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#171717ff',
-      contrastText: '#ffffff',
+      main: primaryColor,
+      contrastText: whiteColor,
     },
     secondary: {
-      main: purple[500],
+      main: secondaryColor,
+      contrastText: blackColor,
     },
-    grey: {
-      main: '#767676',
+    accent: {
+      main: accentColor,
+      contrastText: whiteColor,
     },
     white: {
-      main: '#ffffff',
-      contrastText: '#333333',
+      main: whiteColor,
+      contrastText: blackColor,
+      contrastTheme: primaryColor,
+    },
+    dark: {
+      main: blackColor,
+      contrastText: whiteColor,
+    },
+    divider: {
+      main: '#000000',
     }
   },
   typography: {
@@ -48,7 +66,7 @@ const theme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: '#225eda',
+          color: primaryColor,
           textDecoration: 'none',
           '&:hover': {
             textDecoration: 'underline',
@@ -77,7 +95,8 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '& span': {
-            color: '#ac1de4',
+            color: primaryColor,
+            backgroundColor: '#dcfce8',
           },
         },
       },
@@ -88,19 +107,56 @@ const theme = createTheme({
           display: 'inline-block',
         },
         containedPrimary: {
-          backgroundColor: '#ac1de4',
-          color: '#fff',
+          backgroundColor: primaryColor,
+          boxShadow: 'none',
+          color: whiteColor,
           '&:hover': {
-            backgroundColor: '#9c1ad0',
+            boxShadow: `0px 0px 0px 2px ${primaryColor}`,
+            backgroundColor: whiteColor,
+            color: blackColor,
           },
         },
         sizeLarge: {
-          padding: '12px 48px', // bigger padding
-          fontSize: '1.25rem',  // bigger font size
-          minWidth: '160px',    // bigger min width
-          borderRadius: '20px',
+          padding: '12px 48px',
+          fontSize: '1rem',
+          minWidth: '120px',
+          borderRadius: '8px',
         },
       },
+      variants: [
+        {
+          props: { variant: 'bounded', size: 'small' },
+          style: ({ theme }) => ({
+            border: `1px solid ${alpha(theme.palette.white.contrastText, 0.1)}`,
+            color: theme.palette.white.contrastText,
+            backgroundColor: alpha(theme.palette.white.contrastText, 0.1),
+            padding: '4px 16px',
+            fontSize: '0.8125rem',
+            borderRadius: "100px",
+            '&:hover': {
+              backgroundColor: theme.palette.white.contrastText,
+              borderColor: theme.palette.white.contrastText,
+              color: theme.palette.white.main,
+            },
+          }),
+        },
+        {
+          props: { variant: 'bounded', size: 'medium' },
+          style: ({ theme }) => ({
+            border: `1px solid ${alpha(theme.palette.white.contrastText, 0.1)}`,
+            color: theme.palette.white.contrastText,
+            backgroundColor: alpha(theme.palette.white.contrastText, 0.1),
+            padding: '6px 22px',
+            fontSize: '0.875rem',
+            borderRadius: "100px",
+            '&:hover': {
+              backgroundColor: theme.palette.white.contrastText,
+              borderColor: theme.palette.white.contrastText,
+              color: theme.palette.white.main,
+            },
+          }),
+        },
+      ],
     },
   },
 });

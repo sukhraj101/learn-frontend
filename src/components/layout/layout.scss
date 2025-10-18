@@ -1,0 +1,17 @@
+.headerTop {
+  box-shadow: none;
+  border: none;
+}
+.site__title {
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+  font-weight: 600;
+}
+.main-menu li a, .main-menu li a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+.main-menu li a.active {
+  color: red;
+}

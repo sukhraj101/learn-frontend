@@ -1,0 +1,73 @@
+// colors.scss
+@use './../../../colors' as *;
+
+.skill__grid_item {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  box-shadow: 0px 0px 2px 0px rgb(255, 255, 255);
+  display: flex;
+  justify-items: stretch;
+  align-items: stretch;
+  position: relative;
+  transition: transform 200ms linear;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgb(255 255 255 / 47%) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.skill__grid_item a {
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+}
+.skill__grid_item::before, .skill__grid_item::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50px;
+  background-color: $secondaryColor;
+}
+.skill__grid_item::before {
+  left: 16px;
+  top: 16px;
+  right: initial;
+  bottom: initial;
+}
+.skill__grid_item::after {
+  left: initial;
+  top: initial;
+  right: 16px;
+  bottom: 16px;
+}
+.skill__grid_item:hover {
+  transform: scale(1.025);
+}
+
+.skill__grid_title {
+  color: $whiteColor;
+  font-size: 16px !important;
+  text-align: center;
+  @media (max-width: 600px) {
+    font-size: 12px !important;
+  }
+}
+.skill__grid_icon {
+  background-color: $whiteColor;
+  max-width: 50px;
+  width: 40%;
+  aspect-ratio: 1/1;
+  padding: 4px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.skill__grid_icon img {
+  max-width: 100%;
+  display: block;
+  border-radius: 6px;
+}

@@ -1,0 +1,15 @@
+// accordion.scss
+
+@use "./../../colors.scss" as *;
+
+.MuiAccordion-heading .MuiButtonBase-root, .MuiAccordion-heading > button {
+    padding-left: 0px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+}
+.MuiAccordion-heading .MuiAccordionSummary-expandIconWrapper {
+    color: $whiteColor;
+    background-color: $blackColor;
+    border-radius: 50%;
+    padding: 2px;
+}

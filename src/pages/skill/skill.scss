@@ -1,0 +1,103 @@
+// skill.scss
+@use "./../../colors.scss" as *;
+
+.skill__breadcrumbs {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+.skill__breadcrumbs li {
+    position: relative;
+}
+.skill__breadcrumbs li + li + li::before {
+    position: relative;
+    content: "";
+    margin-right: 12px;
+    top: -1px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    aspect-ratio: 1 / 1;
+    border-radius: 1px;
+    border-top: 1px solid $accentColor;
+    border-right: 1px solid $accentColor;
+    transform: rotate(45deg);
+}
+
+.skill__breadcrumbs {
+  display: flex;
+  gap: 0.5rem; /* optional spacing */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.skill__breadcrumbs li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px !important;
+}
+
+/* Fixed (first and last li) */
+.skill__breadcrumbs li.fixed {
+  flex-shrink: 0;
+}
+
+/* Shrinkable (middle li) */
+.skill__breadcrumbs li.shrinkable {
+  flex: 1 1 auto;
+  min-width: 0; /* KEY: allows flex item to shrink smaller than content */
+}
+
+.skill__wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 94px);
+    margin-top: 0px;
+    padding-top: 30px;
+}
+
+.skill__outline {
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.skill__outline li {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.skill__outline li p {
+    font-size: 15px;
+    line-height: 1.25;
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+.skill__outline li {
+    position: relative;
+}
+
+.skill__outline li a {
+    text-decoration: none;
+    color: initial;
+}
+
+.skill__outline li::before {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    left: -20px;
+    top: 24px;
+    border-radius: 100px;
+    background-color: $blackColor;
+}
+.skill__outline li.active::before, .skill__outline li:has(a:focus)::before  {
+    background-color: $primaryColor;
+}
