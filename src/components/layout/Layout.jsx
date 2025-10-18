@@ -13,7 +13,7 @@ import XIcon from '@mui/icons-material/X';
 import './layout.scss';
 
 const menuList = [
-  { id: 1, name: 'React', slug: 'react' },
+  { id: 1, name: 'React.js', slug: 'react' },
   { id: 2, name: 'JavaScript', slug: 'javascript' },
   { id: 3, name: 'Next.js', slug: 'next' }
 ];
@@ -22,7 +22,7 @@ const menuList = [
 function Layout() {
   const theme = useTheme();
   const location = useLocation();
-  const appColor = location.pathname !== '/' ? 'dark' : 'white';
+  const appColor = location.pathname === '/' ? 'white' : 'dark';
 
   const [open, setOpen] = useState(false);
   const toggleDrawer = (state) => () => {
@@ -63,10 +63,15 @@ function Layout() {
       </AppBar>
 
       <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
-        <List sx={{ width: 250 }}>
+        <Box sx={{
+          padding: "20px 20px 0px 20px"
+        }}>
+          <Typography variant='h6' component="p">Lycronix</Typography>
+        </Box>
+        <List sx={{ width: 250, paddingBlock: "20px 40px" }} className="float__menu">
           {menuList.map((menuItem) => (
             <ListItem button key={menuItem.id}>
-              <NavLink to={menuItem.slug} aria-label="View React category" onClick={() => {setOpen(false)}}>{menuItem.name}</NavLink>
+              <NavLink to={menuItem.slug} aria-label={"View " + menuItem.name + " Category"} onClick={() => {setOpen(false)}}>{menuItem.name}</NavLink>
             </ListItem>
           ))}
         </List>

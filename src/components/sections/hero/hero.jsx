@@ -1,8 +1,16 @@
 import React from "react";
-import { Container, Grid, Typography, Box, Button } from "@mui/material";
+import { Container, Grid, Typography, Box } from "@mui/material";
+import CustomButton from '@/components/Button';
+import { useNavigate } from "react-router-dom";
 import './hero.scss';
 
 function Herosection() {
+
+    const navigate = useNavigate();
+    function hamburgerClick() {
+       navigate('/register');
+    }
+
     return (
         <>
             <Box component="section" className="heroSection" sx={{ paddingTop: { xs: '50px', md: '70px', lg: "0px" }, paddingBottom: { xs: '50px', md: '70px', lg: "0px" } }}>
@@ -24,7 +32,7 @@ function Herosection() {
                                 Lycronix — a vibrant learning hub where you can master modern web technologies like React, JavaScript, Next.js, Node.js, and shadcnUI, all for free.
                             </Typography>
                             <Box>
-                                <Button variant="contained" color="primary" size="large">Register now</Button>
+                                <CustomButton variant="contained" color="primary" size="large" onClick={() => hamburgerClick()}>Register now</CustomButton>
                             </Box>
                         </Grid>
                         <Grid size={{ xs: 12, md: 6, lg: 5 }}>
