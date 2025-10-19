@@ -6,12 +6,13 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { alpha } from '@mui/material/styles';
 import PropTypes from 'prop-types';
+import CustomButton from '@/components/Button';
 import './accordion.scss';
+import EditableContent from '../editableContent/EditableContent';
 
 // 🔧 Styled Accordion
 const Accordion = styled((props) => (
@@ -88,23 +89,13 @@ export default function CustomizedAccordions({ modules = [] }) {
 
   return (
     <Box className="accordion-container">
-      <Button
-        variant="outlined"
-        color="primary"
-        size="small"
-        sx={{
+      <CustomButton variant="bounded" color="primary" size="small" sx={{
           display: 'flex',
-          alignItems: 'center',
-          columnGap: '4px',
-          paddingInline: '10px',
-          borderWidth: '2px',
           marginLeft: 'auto',
           marginBottom: '10px',
-        }}
-        onClick={toggleAll}
-      >
-        {allOpen ? 'Collapse All' : 'Expand All'}
-      </Button>
+        }} onClick={toggleAll}>
+          {allOpen ? 'Collapse All' : 'Expand All'}
+        </CustomButton>
 
       {modules.map((module) => (
         <div key={module.id} className="module-section" style={{ marginBottom: '2rem' }} id={convertToId(module.name)}>
@@ -127,14 +118,7 @@ export default function CustomizedAccordions({ modules = [] }) {
                 </AccordionSummary>
 
                 <AccordionDetails sx={{ padding: { xs: "0px 0px 20px 20px", md: "0px 0px 24px 36px" }  }}>
-                  <Typography
-                    component="div"
-                    variant="body2"
-                    dangerouslySetInnerHTML={{ __html: content }}
-                  />
-                  <Button variant="bounded" size="small" sx={{ marginTop: 1.25 }}>
-                    Suggest edit
-                  </Button>
+                  <EditableContent initialContent={content} />
                 </AccordionDetails>
               </Accordion>
             ))}

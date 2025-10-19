@@ -7,7 +7,7 @@ import './hero.scss';
 function Herosection() {
 
     const navigate = useNavigate();
-    function hamburgerClick() {
+    function registerNow() {
        navigate('/register');
     }
 
@@ -32,7 +32,7 @@ function Herosection() {
                                 Lycronix — a vibrant learning hub where you can master modern web technologies like React, JavaScript, Next.js, Node.js, and shadcnUI, all for free.
                             </Typography>
                             <Box>
-                                <CustomButton variant="contained" color="primary" size="large" onClick={() => hamburgerClick()}>Register now</CustomButton>
+                                <CustomButton variant="contained" color="primary" size="large" onClick={() => registerNow()} aria-label="Register now">Register now</CustomButton>
                             </Box>
                         </Grid>
                         <Grid size={{ xs: 12, md: 6, lg: 5 }}>

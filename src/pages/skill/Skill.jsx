@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useTheme } from '@mui/material/styles';
 import { Link } from "react-router-dom";
 import CustomizedAccordions from "../../components/accordion/accordion";
+import CustomButton from '@/components/Button';
 import "./skill.scss";
 
 const modules = [
@@ -157,9 +158,10 @@ function Skill() {
                                 <li className="shrinkable">Library / Framework</li>
                                 <li className="fixed">React</li>
                             </ul>
-                            <Button variant="outlined" color="primary" size="small" 
-                            sx={{ display: 'flex', alignItems: "center", columnGap: "4px", paddingInline: "10px", borderWidth: "2px"  }} 
-                            onClick={downloadFile}><ArrowDownwardIcon fontSize="14px" /> Download PDF</Button>
+                            <CustomButton variant="bounded" color="primary" size="small" onClick={downloadFile}>
+                                <ArrowDownwardIcon fontSize="14px" /> 
+                                Download PDF
+                            </CustomButton>
                         </Box>
                     </Container>
                 </Box>

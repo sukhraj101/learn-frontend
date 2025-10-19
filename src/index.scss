@@ -22,3 +22,8 @@ body {
   background-color: $whiteColor;
   font-family: "Montserrat", sans-serif;
 }
+.MuiButton-root:has(svg) {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
